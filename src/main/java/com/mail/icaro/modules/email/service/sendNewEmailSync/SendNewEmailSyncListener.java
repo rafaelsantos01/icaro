@@ -1,6 +1,6 @@
-package com.mail.icaro.modules.history.service.sendNewEmail;
+package com.mail.icaro.modules.email.service.sendNewEmailSync;
 
-import com.mail.icaro.modules.history.service.sendNewEmailSync.dto.SendNewEmailDTO;
+import com.mail.icaro.modules.email.service.sendNewEmailSync.dto.SendNewEmailDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -9,12 +9,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @EnableKafka
-public class SendNewEmailListener {
+public class SendNewEmailSyncListener {
 
     @Autowired
-    SendNewEmailService service;
+    SendNewEmailSyncService service;
 
-    @KafkaListener(topics = "sendEmail",containerFactory = "ContainerFactory")
+
+    @KafkaListener(topics = "${app.topic.kafka.send-new-email-sync}",containerFactory = "ContainerFactory")
     public void handle(@Payload SendNewEmailDTO data){
         service.execute(data);
     }
