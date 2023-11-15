@@ -1,0 +1,39 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="rafinhapsantos50@gmail.com" id="shipping_history-2">
+        <createTable tableName="shipping_history">
+
+            <column type="uuid" name="id" defaultValueComputed="uuid_generate_v4()">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="shipping_history_PK" />
+            </column>
+
+            <column type="text" name="content">
+                <constraints nullable="false" />
+            </column>
+
+            <column type="varchar(255)" name="title">
+                <constraints nullable="false"  />
+            </column>
+
+            <column type="varchar(255)" name="user_mail">
+                <constraints nullable="false"/>
+            </column>
+
+            <column type="boolean" name="sync">
+                <constraints nullable="false"  />
+            </column>
+
+            <column type="boolean" name="fail_send">
+                <constraints nullable="true"  />
+            </column>
+
+            <column type="timestamp" name="updated_at" defaultValueComputed="now()">
+                <constraints nullable="true" />
+            </column>
+
+            <column type="timestamp" name="created_at" defaultValueComputed="now()">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

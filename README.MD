@@ -8,7 +8,8 @@ O projeto ainda está em desenvolvimento, e as próximas atualizações serão f
 
 - [x] Iniciar o Projeto
 - [x] Estabelecer Conectividade com o Banco de Dados
-- [ ] Mapeamento de Entidades e Repositórios
+- [x] Mapeamento de Entidades e Repositórios
+- [x] Implementação das classes de configuração do Kafka
 - [ ] Implementar Envio de Email via REST
 - [ ] Implementar Envio de Email via Kafka
 - [ ] Implementar Envio de Email via Outro Método (substituir este item pelo método correto)
