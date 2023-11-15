@@ -1,29 +1,22 @@
 package com.mail.icaro.shared.sendEmail.service;
 
 import com.mail.icaro.shared.sendEmail.dtos.SendEmailServiceSimpleDTO;
-import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-
 import javax.mail.internet.MimeMessage;
-import javax.transaction.Transactional;
 
-@Slf4j
+@Log4j2
 
 @Service
-@Transactional
 public class SendMailServiceSimple {
 
     @Autowired
     private JavaMailSender javaMailSender;
 
-    private static final Logger logger = LoggerFactory.getLogger(SendMailServiceSimple.class);
-
-    public void SendEmailSimple(SendEmailServiceSimpleDTO data){
+    public boolean execute(SendEmailServiceSimpleDTO data){
         try{
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -33,8 +26,12 @@ public class SendMailServiceSimple {
             helper.setText(data.getContent(), true);
 
             javaMailSender.send(message);
+
+            log.info("Email enviado com sucesso");
+            return true;
         }catch (Exception e){
-            logger.error("Error when sending simple email",e);
+            log.error("Error when sending simple email",e);
+            return false;
         }
     }
 }

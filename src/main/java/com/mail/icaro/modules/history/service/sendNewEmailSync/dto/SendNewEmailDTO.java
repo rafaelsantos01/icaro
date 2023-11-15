@@ -1,4 +1,4 @@
-package com.mail.icaro.modules.history.service.sendNewEmail.dto;
+package com.mail.icaro.modules.history.service.sendNewEmailSync.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,9 +16,13 @@ public class SendNewEmailDTO {
     @NotEmpty
     private String userMail;
 
-    @NotNull @NotBlank @NotEmpty
+    @NotNull
+    @NotBlank
+    @NotEmpty
     private String title;
 
-    @NotNull @NotBlank @NotEmpty
+    @NotNull
+    @NotBlank
+    @NotEmpty
     private String content;
 }

@@ -26,10 +26,13 @@ public class ShippingHistory extends DateBase {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "userMail")
+    @Column(name = "user_mail")
     private String userMail;
 
     @Column(name = "sync")
     private Boolean sync;
+
+    @Column(name = "fail_send")
+    private Boolean failSend;
 
 }

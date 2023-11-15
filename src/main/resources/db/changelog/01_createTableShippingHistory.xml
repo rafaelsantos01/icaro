@@ -15,12 +15,16 @@
                 <constraints nullable="false"  />
             </column>
 
-            <column type="varchar(255)" name="userMail">
+            <column type="varchar(255)" name="user_mail">
                 <constraints nullable="false"/>
             </column>
 
             <column type="boolean" name="sync">
                 <constraints nullable="false"  />
+            </column>
+
+            <column type="boolean" name="fail_send">
+                <constraints nullable="true"  />
             </column>
 
             <column type="timestamp" name="updated_at" defaultValueComputed="now()">
