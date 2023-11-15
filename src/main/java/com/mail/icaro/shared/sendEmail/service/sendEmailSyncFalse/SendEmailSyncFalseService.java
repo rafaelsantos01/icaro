@@ -8,7 +8,7 @@ import com.mail.icaro.shared.sendEmail.service.SendMailServiceSimple;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.beans.factory.annotation.Value;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -26,9 +26,10 @@ public class SendEmailSyncFalseService {
 
     ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     public SendEmailSyncFalseService() {
+
         scheduler = Executors.newScheduledThreadPool(1);
-        long initialDelay = 0;
-        long period = 10;
+        int initialDelay = 1;
+        int period = 5;
         TimeUnit unit = TimeUnit.MINUTES;
         scheduler.scheduleAtFixedRate(this::execute, initialDelay, period, unit);
     }

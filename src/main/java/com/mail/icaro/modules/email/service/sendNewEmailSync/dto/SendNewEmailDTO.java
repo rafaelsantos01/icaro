@@ -1,4 +1,4 @@
-package com.mail.icaro.modules.history.service.sendNewEmailSync.dto;
+package com.mail.icaro.modules.email.service.sendNewEmailSync.dto;
 
 import lombok.Getter;
 import lombok.Setter;

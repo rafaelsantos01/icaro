@@ -1,8 +1,6 @@
-package com.mail.icaro.modules.history.service.sendNewEmail;
+package com.mail.icaro.modules.email.service.sendNewEmail;
 
-import com.mail.icaro.modules.history.entity.ShippingHistory;
-import com.mail.icaro.modules.history.repository.ShippingHistoryRepository;
-import com.mail.icaro.modules.history.service.sendNewEmailSync.dto.SendNewEmailDTO;
+import com.mail.icaro.modules.email.service.sendNewEmailSync.dto.SendNewEmailDTO;
 import com.mail.icaro.shared.sendEmail.dtos.SendEmailServiceSimpleDTO;
 import com.mail.icaro.shared.sendEmail.service.SendMailServiceSimple;
 import org.springframework.beans.factory.annotation.Autowired;

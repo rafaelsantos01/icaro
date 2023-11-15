@@ -1,6 +1,6 @@
-package com.mail.icaro.modules.history.service.sendNewEmail;
+package com.mail.icaro.modules.email.service.sendNewEmail;
 
-import com.mail.icaro.modules.history.service.sendNewEmailSync.dto.SendNewEmailDTO;
+import com.mail.icaro.modules.email.service.sendNewEmailSync.dto.SendNewEmailDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
