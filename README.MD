@@ -39,6 +39,24 @@ Para usar icaro, siga estas etapas:
 - docker push rafaelsantos15/icaro
 ```
 
+Endpoints 
+```
+    POST: /api/icaro/send
+    {
+      "userMail": "seuemail@gmail.com",
+      "title": "Email de teste",
+      "content":"envio de email"
+    }
+    
+    POST: /api/icaro/sync/send
+    {
+      "userMail": "seuemail@gmail.com",
+      "title": "Email de teste",
+      "content":"envio de email"
+    }
+    
+```
+
 ## 🤝 Colaboradores
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:

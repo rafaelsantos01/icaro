@@ -12,7 +12,7 @@ import javax.validation.Valid;
 
 @Tag(name = "Email")
 @RestController
-@RequestMapping("/api/icaro/sendEmail")
+@RequestMapping("/api/icaro/send")
 public class SendNewEmailController {
 
     @Autowired

@@ -14,7 +14,7 @@ import javax.validation.Valid;
 
 @Tag(name = "Email")
 @RestController
-@RequestMapping("/api/icaro/sync/sendEmail")
+@RequestMapping("/api/icaro/sync/send")
 public class SendNewEmailSyncController {
 
     @Autowired
