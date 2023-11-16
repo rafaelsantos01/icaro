@@ -10,10 +10,10 @@ O projeto ainda está em desenvolvimento, e as próximas atualizações serão f
 - [x] Estabelecer Conectividade com o Banco de Dados
 - [x] Mapeamento de Entidades e Repositórios
 - [x] Implementação das classes de configuração do Kafka
-- [ ] Implementar Envio de Email via REST
-- [ ] Implementar Envio de Email via Kafka
-- [ ] Implementar Envio de Email via Outro Método (substituir este item pelo método correto)
-- [ ] Desenvolver Documentação
+- [x] Implementar Envio de Email via REST
+- [x] Implementar Envio de Email via Kafka
+- [x] Desenvolver Documentação
+- [ ] Testar aplicação
 - [ ] Criar Testes
 
 ## 💻 Pré-requisitos
@@ -21,7 +21,7 @@ O projeto ainda está em desenvolvimento, e as próximas atualizações serão f
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 * Você instalou a versão mais recente do `<Java 11>`
-*  Banco de dados  `<Postgres>`.
+* Banco de dados  `<Postgres>`.
 * Você tem uma máquina `<Windows / Linux>`.
 
 ## ☕ Usando icaro

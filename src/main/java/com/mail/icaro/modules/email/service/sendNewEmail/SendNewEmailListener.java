@@ -1,6 +1,6 @@
 package com.mail.icaro.modules.email.service.sendNewEmail;
 
-import com.mail.icaro.modules.email.service.sendNewEmailSync.dto.SendNewEmailDTO;
+import com.mail.icaro.modules.email.service.sendNewEmail.dto.SendNewEmailDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;

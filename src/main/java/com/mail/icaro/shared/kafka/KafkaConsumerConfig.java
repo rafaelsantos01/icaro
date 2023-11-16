@@ -37,7 +37,7 @@ public class KafkaConsumerConfig {
     ) {
         ConcurrentKafkaListenerContainerFactory<String, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(ConsumerFactory);
-        factory.setMessageConverter(new JsonMessageConverter());
+       factory.setMessageConverter(new JsonMessageConverter());
         return factory;
     }
 }

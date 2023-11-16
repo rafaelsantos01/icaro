@@ -1,5 +1,6 @@
 package com.mail.icaro.config.swagger;
 
+import com.mail.icaro.modules.email.service.sendNewEmail.dto.SendNewEmailDTO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,24 +21,22 @@ public class SwaggerConfig {
 
   @Bean
   public Docket api() {
-
     return new Docket(DocumentationType.SWAGGER_2)
-      .select()
-      .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
-      .paths(PathSelectors.any())
-      .build()
-      .apiInfo(new ApiInfo(
-        "Icaro API",
-        "Documentação para uso do serviço interno Icaro",
-        "1.0",
-        "https://example.com/terms-of-service",
-        new Contact("SpartanTech Solutions", "https://spantan.com", "contato@spantan.com"),
-        "Apache 2.0",
-        "https://www.apache.org/licenses/LICENSE-2.0.html",
-        Arrays.asList(new VendorExtension[]{})
-      ));
-
-
+            .select()
+            .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
+            .paths(PathSelectors.any())
+            .build()
+            .apiInfo(new ApiInfo(
+                    "Icaro API",
+                    "Documentação para uso do serviço interno Icaro",
+                    "1.0",
+                    "https://example.com/terms-of-service",
+                    new Contact("Rafael Santos", "https://portifolio-react-rose-tau.vercel.app/", "rafael.p.santos@outlook.com"),
+                    "Apache 2.0",
+                    "https://www.apache.org/licenses/LICENSE-2.0.html",
+                    Arrays.asList(new VendorExtension[]{})
+            ))
+            .directModelSubstitute(SendNewEmailDTO.class, Void.class);
   }
 }
 
