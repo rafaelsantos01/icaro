@@ -35,6 +35,8 @@ Para usar icaro, siga estas etapas:
 -Inicie o projeto no ambiente local.
 -Consulte a documentação disponível em http://localhost:8080/swagger-ui.html para obter 
  informações detalhadas sobre as APIs e suas funcionalidades.
+ ou caso queira rodar a imagem no docker
+- docker push rafaelsantos15/icaro
 ```
 
 ## 🤝 Colaboradores
