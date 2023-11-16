@@ -1,8 +1,10 @@
 package com.mail.icaro.modules.email.service.sendNewEmailSync;
 
+import com.mail.icaro.modules.email.service.sendNewEmailSync.dto.SendNewEmailSyncRequestDTO;
+import com.mail.icaro.modules.email.service.sendNewEmailSync.dto.SendNewEmailSyncResponseDTO;
 import com.mail.icaro.modules.history.entity.ShippingHistory;
 import com.mail.icaro.modules.history.repository.ShippingHistoryRepository;
-import com.mail.icaro.modules.email.service.sendNewEmailSync.dto.SendNewEmailDTO;
+import com.mail.icaro.modules.email.service.sendNewEmail.dto.SendNewEmailDTO;
 import com.mail.icaro.shared.sendEmail.dtos.SendEmailServiceSimpleDTO;
 import com.mail.icaro.shared.sendEmail.service.SendMailServiceSimple;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,7 @@ public class SendNewEmailSyncService {
     @Autowired
     SendMailServiceSimple sendMailServiceSimple;
 
-    public void execute(SendNewEmailDTO data){
+    public SendNewEmailSyncResponseDTO execute(SendNewEmailSyncRequestDTO data){
 
         ShippingHistory shippingHistory = new ShippingHistory();
         shippingHistory.setContent(data.getContent());
@@ -32,5 +34,14 @@ public class SendNewEmailSyncService {
 
         shippingHistory.setSync(sync);
         shippingHistoryRepository.saveAndFlush(shippingHistory);
+
+        SendNewEmailSyncResponseDTO sendNewEmailSyncResponseDTO = new SendNewEmailSyncResponseDTO();
+        sendNewEmailSyncResponseDTO.setContent(shippingHistory.getContent());
+        sendNewEmailSyncResponseDTO.setTitle(shippingHistory.getTitle());
+        sendNewEmailSyncResponseDTO.setUserMail(shippingHistory.getUserMail());
+        sendNewEmailSyncResponseDTO.setId(shippingHistory.getId());
+        sendNewEmailSyncResponseDTO.setSync(shippingHistory.getSync());
+
+        return sendNewEmailSyncResponseDTO;
     }
 }

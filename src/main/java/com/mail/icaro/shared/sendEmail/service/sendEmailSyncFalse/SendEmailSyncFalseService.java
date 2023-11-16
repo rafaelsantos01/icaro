@@ -45,10 +45,8 @@ public class SendEmailSyncFalseService {
             data.setTitle(shippingHistory.getTitle());
 
             boolean sync = sendMailServiceSimple.execute(data);
-            if(!sync){
-                shippingHistory.setFailSend(true);
-            }
 
+            shippingHistory.setFailSend(!sync);
             shippingHistory.setSync(sync);
             shippingHistoryRepository.saveAndFlush(shippingHistory);
         }

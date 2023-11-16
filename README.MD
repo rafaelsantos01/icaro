@@ -10,10 +10,10 @@ O projeto ainda está em desenvolvimento, e as próximas atualizações serão f
 - [x] Estabelecer Conectividade com o Banco de Dados
 - [x] Mapeamento de Entidades e Repositórios
 - [x] Implementação das classes de configuração do Kafka
-- [ ] Implementar Envio de Email via REST
-- [ ] Implementar Envio de Email via Kafka
-- [ ] Implementar Envio de Email via Outro Método (substituir este item pelo método correto)
-- [ ] Desenvolver Documentação
+- [x] Implementar Envio de Email via REST
+- [x] Implementar Envio de Email via Kafka
+- [x] Desenvolver Documentação
+- [ ] Testar aplicação
 - [ ] Criar Testes
 
 ## 💻 Pré-requisitos
@@ -21,7 +21,7 @@ O projeto ainda está em desenvolvimento, e as próximas atualizações serão f
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 * Você instalou a versão mais recente do `<Java 11>`
-*  Banco de dados  `<Postgres>`.
+* Banco de dados  `<Postgres>`.
 * Você tem uma máquina `<Windows / Linux>`.
 
 ## ☕ Usando icaro
@@ -35,6 +35,26 @@ Para usar icaro, siga estas etapas:
 -Inicie o projeto no ambiente local.
 -Consulte a documentação disponível em http://localhost:8080/swagger-ui.html para obter 
  informações detalhadas sobre as APIs e suas funcionalidades.
+ ou caso queira rodar a imagem no docker
+- docker push rafaelsantos15/icaro
+```
+
+Endpoints 
+```
+    POST: /api/icaro/send
+    {
+      "userMail": "seuemail@gmail.com",
+      "title": "Email de teste",
+      "content":"envio de email"
+    }
+    
+    POST: /api/icaro/sync/send
+    {
+      "userMail": "seuemail@gmail.com",
+      "title": "Email de teste",
+      "content":"envio de email"
+    }
+    
 ```
 
 ## 🤝 Colaboradores
