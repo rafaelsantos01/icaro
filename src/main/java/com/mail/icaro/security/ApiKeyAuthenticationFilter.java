@@ -1,5 +1,6 @@
 package com.mail.icaro.security;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,8 @@ import java.io.IOException;
 @Component
 public class ApiKeyAuthenticationFilter extends OncePerRequestFilter {
 
+    @Value("${api.security.token.secret}")
+    private String secret;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException, IOException {
@@ -36,7 +39,6 @@ public class ApiKeyAuthenticationFilter extends OncePerRequestFilter {
     }
 
     private boolean isValidApiKey(String apiKey) {
-
-        return apiKey.equals("teste");
+        return apiKey.equals(secret);
     }
 }
