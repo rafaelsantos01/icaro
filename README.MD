@@ -42,6 +42,7 @@ Para usar icaro, siga estas etapas:
 Endpoints 
 ```
     POST: /api/icaro/send
+    HEADER:X-API-Key | sua chave
     {
       "userMail": "seuemail@gmail.com",
       "title": "Email de teste",
@@ -49,6 +50,7 @@ Endpoints
     }
     
     POST: /api/icaro/sync/send
+    HEADER:X-API-Key | sua chave
     {
       "userMail": "seuemail@gmail.com",
       "title": "Email de teste",

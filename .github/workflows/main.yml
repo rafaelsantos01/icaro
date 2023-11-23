@@ -29,3 +29,17 @@ jobs:
 
       - name: Push image docker
         run: docker push rafaelsantos15/icaro
+
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Pull image from docker hub
+        run: docker pull rafaelsantos15/icaro:latest
+
+      - name: Remove old docker container
+        run: docker rm -f icaro
+
+      - name: Run docker container
+        run: docker run -d -p 8080:8080 -e APP_DB_USERNAME=${{secrets.APP_DB_USERNAME}} -e APP_DB_PASSWORD='${{secrets.APP_DB_PASSWORD}}' -e APP_DB_URL=${{secrets.APP_DB_URL}} -e SECRET_TOKEN='${{secrets.SECRET_TOKEN}}' -e APP_HOST_EMAIL=${{secrets.APP_HOST_EMAIL}} -e APP_LOGIN_EMAIL='${{secrets.APP_LOGIN_EMAIL}}' -e APP_PORT_EMAIL=${{secrets.APP_PORT_EMAIL}} -e APP_PASSWORD_EMAIL='${{secrets.APP_PASSWORD_EMAIL}}' -e APP_KAFKA_SERVER='${{secrets.APP_KAFKA_SERVER}}'  -e APP_TOPIC_KAFKA_SEND_NEW_EMAIL_SYNC='${{secrets.APP_TOPIC_KAFKA_SEND_NEW_EMAIL_SYNC}}' -e APP_TOPIC_KAFKA_SEND_NEW_EMAIL='${{secrets.APP_TOPIC_KAFKA_SEND_NEW_EMAIL}}' --name icaro rafaelsantos15/icaro
