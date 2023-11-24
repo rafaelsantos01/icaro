@@ -14,7 +14,7 @@ public class SendNewEmailListener {
     @Autowired
     SendNewEmailService service;
 
-    @KafkaListener(topics = "${app.topic.kafka.send-new-email}",containerFactory = "ContainerFactory")
+    //@KafkaListener(topics = "${app.topic.kafka.send-new-email}",containerFactory = "ContainerFactory")
     public void handle(@Payload SendNewEmailDTO data){
         service.execute(data);
     }

@@ -13,10 +13,10 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import java.util.HashMap;
 import java.util.Map;
 
-@Service
+//@Service
 public class KafkaConsumerConfig {
 
-    @Value("${spring.kafka.bootstrap-servers}")
+   // @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServerUrl;
 
     @Bean
