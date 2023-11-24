@@ -15,7 +15,7 @@ public class SendNewEmailSyncListener {
     SendNewEmailSyncService service;
 
 
-    @KafkaListener(topics = "${app.topic.kafka.send-new-email-sync}",containerFactory = "ContainerFactory")
+    //@KafkaListener(topics = "${app.topic.kafka.send-new-email-sync}",containerFactory = "ContainerFactory")
     public void handle(@Payload SendNewEmailSyncRequestDTO data){
         service.execute(data);
     }
