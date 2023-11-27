@@ -12,7 +12,7 @@ import javax.validation.Valid;
 public class SendNewEmailService {
 
     @Autowired
-    SendMailServiceSimple sendMailServiceSimple;
+    private SendMailServiceSimple sendMailServiceSimple;
 
     public SendNewEmailDTO execute(@Valid SendNewEmailDTO data){
         SendEmailServiceSimpleDTO sendEmailServiceSimpleDTO = new SendEmailServiceSimpleDTO();
