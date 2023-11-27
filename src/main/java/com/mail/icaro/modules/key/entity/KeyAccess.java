@@ -17,7 +17,7 @@ import java.util.UUID;
 @Setter
 
 @Entity
-@Table(name = "key_access")
+@Table(name = "keys")
 public class KeyAccess extends DateBase {
 
 
