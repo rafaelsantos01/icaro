@@ -35,8 +35,8 @@ public class SwaggerConfig {
                     "Apache 2.0",
                     "https://www.apache.org/licenses/LICENSE-2.0.html",
                     Arrays.asList(new VendorExtension[]{})
-            ))
-            .directModelSubstitute(SendNewEmailDTO.class, Void.class);
+            ));
+
   }
 }
 

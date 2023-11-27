@@ -59,10 +59,7 @@ Endpoints
     
 ```
 
-## 🤝 Colaboradores
-
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
-
+##  Desenvolvedor
 <table>
   <tr>
     <td align="center">
